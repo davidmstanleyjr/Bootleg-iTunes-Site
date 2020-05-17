@@ -18,14 +18,15 @@ const getContent = (search) => {
 	const params = { term: search, media: 'musicVideo' };
 	url.search = new URLSearchParams(params);
 	fetch(url, { method: 'POST' }).then((results) => results.json()).then((data) => {
-		const resultsHTML = data.results.map(
-			(result) => `
+		const resultsHTML = data.results
+			.map(
+				(result) => `
         <div style="background-image: url(${result.artworkUrl100});"
         onclick="openMedia('${result.previewURl}', '${result.trackCensoredName}
         ')" class="result"></div>
         `
-		);
+			)
+			.join('');
+		container.innerHTML = resultsHTML;
 	});
 };
-
-getContent('beyonce');

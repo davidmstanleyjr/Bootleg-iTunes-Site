@@ -12,3 +12,11 @@ body {
 	font: 14px;
 	font-family: 'Lato', sans-serif;
 }
+
+.result {
+	width: 150px;
+	height: 125px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
