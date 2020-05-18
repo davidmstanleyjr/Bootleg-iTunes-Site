@@ -30,3 +30,13 @@ const getContent = (search) => {
 		container.innerHTML = resultsHTML;
 	});
 };
+
+//This allows you to click an image and it opens
+const openMedia = (url, title) => {
+	media.innerHTML = `<video controls autoplay src="${url}"></video><p>${title}</p>`;
+};
+
+//This closes the media you just opened
+const closeMedia = () => {
+	media.innerHTML = '';
+};
